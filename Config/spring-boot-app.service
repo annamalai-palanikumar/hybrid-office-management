@@ -1,0 +1,12 @@
+[Unit]
+Description=#APP_NAME#
+After=syslog.target
+
+[Service]
+User=#APP_NAME#
+PermissionsStartOnly=true
+ExecStart=java -jar #APPLICATION_ROOT_FOLDER#/target/#APP_NAME#.jar --server.port=#PORT#
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

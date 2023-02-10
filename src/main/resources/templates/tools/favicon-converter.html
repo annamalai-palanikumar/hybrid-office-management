@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Favicon Generator - Image to Favicon</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.ico" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/admin-style.css" rel="stylesheet">
+  <script>
+    function renderPreview(event) {
+      var files = event.target.files;
+    
+      // FileReader support
+      if (FileReader && files && files.length) {
+          var fr = new FileReader();
+          fr.onload = function () {
+              document.getElementById("preview").src = fr.result;
+              document.getElementById("preview").srcset = fr.result
+          }
+          fr.readAsDataURL(files[0]);
+      }
+      // Not supported
+      else {
+          // fallback -- perhaps submit the input to an iframe and temporarily store
+          // them on the server until the user's session ends.
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="error-section"></div>
+  <main id="main" class="main" style="margin: 0%;">
+    <section class="section">
+      <div class="row">
+        <div class="col-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Generate Favicon From Image</h5>
+
+              <!-- Favicon Generator -->
+              <form class="row g-3" onsubmit="return false;">
+                <div class="col">
+                  <div class="file-dropzone position-relative bg-white rounded border d-flex justify-content-center align-items-center p-5">
+                    <input id="image" type="file" onchange="renderPreview(event);" class="position-absolute m-0 p-0 opacity-0 w-100 h-100">
+                    <p class="text-center">
+                      <span><i class="fa fa-upload"></i></span>
+                      <span class="is-3">Drag and drop your file here or click here to upload.</span>
+                    </p>
+                  </div>
+                  <br>
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <img id="preview" alt="Favicon Preview 48x48" src="/assets/img/placeholder-50x50.png" width="40" srcset="/assets/img/placeholder-50x50.png 40w" sizes="(max-width: 40px) 100vw, 40px" class="image g-image">
+                      <a id="download-package" target="_blank" class="btn btn-primary">
+                        <i class='bx bx-download'></i> Download
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer" style="margin: 0%;">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

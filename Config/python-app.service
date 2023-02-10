@@ -1,0 +1,12 @@
+[Unit]
+Description=#APP_NAME#
+After=network.target
+
+[Service]
+User=#APP_NAME#
+PermissionsStartOnly=true
+WorkingDirectory=#APPLICATION_ROOT_FOLDER#/
+ExecStart=/usr/bin/gunicorn --access-logfile - --workers 3 --bind unix:#APPLICATION_ROOT_FOLDER#/#APP_NAME#.sock wsgi:app
+
+[Install]
+WantedBy=multi-user.target

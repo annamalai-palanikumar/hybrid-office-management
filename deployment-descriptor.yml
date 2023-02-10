@@ -1,0 +1,6 @@
+appname: 'hybrid-office-management'
+prod_domain: 'hybrid-office.annamalai.er.in'
+application_type: 'SPRING_BOOT_APPLICATION'
+nginx_config: 'Config/port-proxy-nginx.conf'
+app_service_config: 'Config/spring-boot-app.service'
+port: '8083'

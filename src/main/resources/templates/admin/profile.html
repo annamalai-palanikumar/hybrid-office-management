@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>My Portfolio Management</title>
+  <meta content="My Portfolio Managment has a functionality to dynamically change the contents of My Portfolio." name="description">
+  <meta content="Full Stack Developer, Annamalai, Annamalai Palanikumar" name="keywords">
+
+  <link href="/assets/img/favicon.ico" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CNunito:300,300i,400,400i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+  <link href="/assets/css/admin-style.css" rel="stylesheet">
+</head>
+
+<body class="toggle-sidebar">
+  <div id="google_translate_element"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/admin" class="logo d-flex align-items-center">
+        <img src="/assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block text-nowrap">Portfolio Admin Console</span>
+      </a>
+    </div>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bx bx-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class='bx bx-error-circle text-warning'></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bx bx-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bx bx-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bx bx-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class='bx bx-message-detail'></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="/assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="/assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="/assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/assets/img/profile-img.webp" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2" th:text="${portfolio.name}"></span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 th:text="${portfolio.name}"></h6>
+              <span th:text="${portfolio.job}"></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" onClick="signOut()">
+                <i class='bx bx-log-out'></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+  <main id="main" class="main">
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+              <img src="/assets/img/profile-img.webp" alt="Profile" class="rounded-circle">
+              <h2 th:text="${portfolio.name}"></h2>
+              <h3 class="Job"></h3>
+              <div class="social-links mt-2">
+                <a target="_blank" class="linkedin" th:href="${portfolio.linkedIn}"><i class="bx bxl-linkedin"></i></a>
+                <a target="_blank" class="github" th:href="${portfolio.gitHub}"><i class="bx bxl-github"></i></a>
+                <a target="_blank" class="stack-overflow" th:href="${portfolio.stackOverFlow}"><i class="bx bxl-stack-overflow"></i></a>
+                <a target="_blank" class="gitlab" th:href="${portfolio.gitLab}"><i class="bx bxl-gitlab"></i></a>
+                <a target="_blank" class="google-dev" th:href="${portfolio.googleDeveloper}"><i class="bx bxl-google"></i></a>
+                <a target="_blank" class="twitter" th:href="${portfolio.twitter}"><i class="bx bxl-twitter"></i></a>
+                <a target="_blank" class="facebook" th:href="${portfolio.faceBook}"><i class="bx bxl-facebook"></i></a>
+                <a target="_blank" class="instagram" th:href="${portfolio.instagram}"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <h5 class="card-title">About</h5>
+                  <div id="aboutPreview" th:data-content="${portfolio.about}"></div>
+
+                  <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.name}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Company</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.company}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Job</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.job}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Country</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.country}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Address</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.address}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Mobile</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.mobile}"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Email</div>
+                    <div class="col-lg-9 col-md-8" th:text="${portfolio.email}"></div>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                  <form onsubmit="updatePortfolio(this, event)">
+                    <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <div class="col-md-8 col-lg-9">
+                        <img src="/assets/img/profile-img.webp" alt="Profile">
+                        <div class="pt-2">
+                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bx bx-upload"></i></a>
+                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bx bx-trash"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="fullName" type="text" class="form-control" id="fullName" th:value="${portfolio.name}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                      <div class="col-md-8 col-lg-9">
+                        <div name="about" class="form-control" id="about" th:data-content="${portfolio.about}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="company" type="text" class="form-control" id="company" th:value="${portfolio.company}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="job" type="text" class="form-control" id="Job" th:value="${portfolio.job}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="country" type="text" class="form-control" id="Country" th:value="${portfolio.country}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="address" type="text" class="form-control" id="Address" th:value="${portfolio.address}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Mobile" class="col-md-4 col-lg-3 col-form-label">Mobile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="mobile" type="text" class="form-control" id="Mobile" th:value="${portfolio.mobile}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="email" type="email" class="form-control" id="Email" th:value="${portfolio.email}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="linkedin" type="text" class="form-control" id="Linkedin" th:value="${portfolio.linkedIn}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="GitHub" class="col-md-4 col-lg-3 col-form-label">GitHub Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="github" type="text" class="form-control" id="GitHub" th:value="${portfolio.gitHub}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="StackOverFlow" class="col-md-4 col-lg-3 col-form-label">stack overflow Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="stackoverflow" type="text" class="form-control" id="StackOverFlow" th:value="${portfolio.stackOverFlow}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="GitLab" class="col-md-4 col-lg-3 col-form-label">GitLab Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="gitlab" type="text" class="form-control" id="GitLab" th:value="${portfolio.gitLab}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="GoogleDeveloper" class="col-md-4 col-lg-3 col-form-label">Google Dev Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="googledeveloepr" type="text" class="form-control" id="GoogleDeveloper" th:value="${portfolio.googleDeveloper}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="twitter" type="text" class="form-control" id="Twitter" th:value="${portfolio.twitter}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="facebook" type="text" class="form-control" id="Facebook" th:value="${portfolio.faceBook}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="instagram" type="text" class="form-control" id="Instagram" th:value="${portfolio.instagram}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="jobDescripton" class="col-md-4 col-lg-3 col-form-label">Job Description</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="jobDescripton" type="text" class="form-control" id="jobDescripton" th:value="${portfolio.jobDescripton}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="jobSlogan" class="col-md-4 col-lg-3 col-form-label">Job Slogan</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="jobSlogan" type="text" class="form-control" id="jobSlogan" th:value="${portfolio.jobSlogan}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="birthDay" class="col-md-4 col-lg-3 col-form-label">Birth Day</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="birthDay" type="text" class="form-control" id="birthDay" th:value="${portfolio.birthDay}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="webSite" class="col-md-4 col-lg-3 col-form-label">Web Site</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="webSite" type="text" class="form-control" id="webSite" th:value="${portfolio.webSite}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="city" class="col-md-4 col-lg-3 col-form-label">City</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="city" type="text" class="form-control" id="city" th:value="${portfolio.city}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="degree" class="col-md-4 col-lg-3 col-form-label">Degree</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="degree" type="text" class="form-control" id="degree" th:value="${portfolio.degree}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="privateMail" class="col-md-4 col-lg-3 col-form-label">Private Mail</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="privateMail" type="text" class="form-control" id="privateMail" th:value="${portfolio.privateMail}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="outLookMail" class="col-md-4 col-lg-3 col-form-label">Outlook Mail</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="outLookMail" type="text" class="form-control" id="outLookMail" th:value="${portfolio.outLookMail}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="gmail" class="col-md-4 col-lg-3 col-form-label">Gmail</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="gmail" type="text" class="form-control" id="gmail" th:value="${portfolio.gmail}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="freelance" class="col-md-4 col-lg-3 col-form-label">Freelance</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="freelance" type="text" class="form-control" id="freelance" th:value="${portfolio.freelance}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="skillsDescription" class="col-md-4 col-lg-3 col-form-label">Skills Description</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="skillsDescription" type="text" class="form-control" id="skillsDescription" th:value="${portfolio.skillsDescription}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="skills" class="col-md-4 col-lg-3 col-form-label">Skills</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="skills" type="text" class="form-control" id="skills" th:value="${portfolio.skills}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="resumeSummary" class="col-md-4 col-lg-3 col-form-label">Resume Summary</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="resumeSummary" type="text" class="form-control" id="resumeSummary" th:value="${portfolio.resumeSummary}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="careerStart" class="col-md-4 col-lg-3 col-form-label">Career Start</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="careerStart" type="text" class="form-control" id="careerStart" th:value="${portfolio.careerStart}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="careerEnd" class="col-md-4 col-lg-3 col-form-label">Career End</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="careerEnd" type="text" class="form-control" id="careerEnd" th:value="${portfolio.careerEnd}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="educations" class="col-md-4 col-lg-3 col-form-label">Educations</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="educations" type="text" class="form-control" id="educations" th:value="${portfolio.educations}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="experiances" class="col-md-4 col-lg-3 col-form-label">Experiances</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="experiances" type="text" class="form-control" id="experiances" th:value="${portfolio.experiances}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="portfolio" class="col-md-4 col-lg-3 col-form-label">Portfolio</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="portfolio" type="text" class="form-control" id="portfolio" th:value="${portfolio.portfolio}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="awards" class="col-md-4 col-lg-3 col-form-label">Awards</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="awards" type="text" class="form-control" id="awards" th:value="${portfolio.awards}">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="footerSlogan" class="col-md-4 col-lg-3 col-form-label">Awards</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="footerSlogan" type="text" class="form-control" id="footerSlogan" th:value="${portfolio.footerSlogan}">
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Status!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Portfolio Updated Successfully!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bx-chevron-up"></i></a>
+
+  <script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/chart.js/chart.min.js"></script>
+  <script src="/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="/assets/vendor/quill/quill.min.js"></script>
+  <script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script src="/assets/js/admin-main.js"></script>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title th:text="|${portfolio.name}, A Full Stack Developer|"></title>
+  <meta content="I'm a Full Stack Developer, programmer and a web developer. I'm passionate about web development, especially java, javascript, node.js, HTML5, and CSS3." name="description">
+  <meta content="Full Stack Developer,Annamalai,Annamalai Palanikumar" name="keywords">
+  <meta property="og:image" content="https://annamalai.er.in/assets/img/facebook-og.webp"/>
+  <meta property="og:title" content="Annamalai Palanikumar, A Full Stack Developer"/>
+  <meta property="og:description" content="Annamalai Palanikumar is a Full Stack Developer, programmer and a web developer. He is passionate about web development, especially java, javascript, node.js, HTML5, and CSS3."/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="Annamalai Palanikumar, A Full Stack Developer">
+  <meta name="twitter:description" content="Annamalai Palanikumar is a Full Stack Developer, programmer and a web developer.">
+  <meta name="twitter:url" content="https://annamalai.er.in/assets/img/twitter-og.webp">
+  <meta name="twitter:card" content="Annamalai Palanikumar is a Full Stack Developer, programmer and a web developer. He is passionate about web development, especially java, javascript, node.js, HTML5, and CSS3.">
+
+  <meta name="i18nDefaultLocale" content="en_US">
+  <meta name="i18nLocale" content="en_US">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link defer th:href="@{/assets/img/favicon.ico}" rel="icon">
+  <link defer th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+  <link rel="preload" href="/assets/vendor/boxicons/fonts/boxicons.ttf" as="font" type="font/ttf" crossorigin>
+
+  <link defer th:href="@{https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css}" rel="stylesheet">
+  <link defer th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css}" rel="stylesheet">
+  <link defer th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.min.css}" rel="stylesheet">
+  <link defer th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+  <link defer th:href="@{https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css}" rel="stylesheet">
+  <link defer th:href="@{https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.css}" rel="stylesheet">
+  <link defer th:href="@{https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css}" rel="stylesheet">
+
+  <link defer th:href="@{/assets/css/portfolio-style.css}" rel="stylesheet">
+  <style>
+    /*--------------------------------------------------------------
+    # Preloader
+    --------------------------------------------------------------*/
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    #preloader:before {
+      content: "";
+      position: fixed;
+      top: calc(50% - 30px);
+      left: calc(50% - 30px);
+      border: 6px solid #0563bb;
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      -webkit-animation: animate-preloader 1s linear infinite;
+      animation: animate-preloader 1s linear infinite;
+    }
+
+    @-webkit-keyframes animate-preloader {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes animate-preloader {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <i class="bx bx-menu mobile-nav-toggle d-xl-none"></i>
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active" title="Home"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto" title="About"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#skills" class="nav-link scrollto" title="Skills"><i class='bx bx-bullseye'></i> <span>Skills</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto" title="Resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto" title="Portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+        <li><a href="#contact" class="nav-link scrollto" title="Contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- <div id="google_translate_element"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 th:text="${portfolio.name}"></h1>
+      <p>I'm <span>a Full Stack Developer</span></p>
+      <div class="social-links">
+        <a target="_blank" th:href="${portfolio.linkedIn}" class="linkedin" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a target="_blank" th:href="${portfolio.gitHub}" class="github" title="Github"><i class="bx bxl-github"></i></a>
+        <a target="_blank" th:href="${portfolio.stackOverFlow}" class="stack-overflow" title="Stack Overflow"><i class="bx bxl-stack-overflow"></i></a>
+        <a target="_blank" style="padding-bottom: 10px;" th:href="${portfolio.gitLab}" class="gitlab" title="Gitlab"><i class="bx bxl-gitlab"></i></a>
+        <a target="_blank" th:href="${portfolio.googleDeveloper}" class="google-dev" title="Google Developer"><i class="bx bxl-google"></i></a>
+        <a target="_blank" th:href="${portfolio.twitter}" class="twitter" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a target="_blank" th:href="${portfolio.faceBook}" class="facebook" title="Facebook"><i class="bx bxl-facebook"></i></a>
+        <a target="_blank" style="padding-bottom: 11px;" th:href="${portfolio.instagram}" class="instagram" title="Instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <div id="aboutPreview" th:data-content="${portfolio.about}"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <img src="/assets/img/profile-img.webp" class="img-fluid" alt="Profile" loading="lazy" height="600" width="600">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <h3 th:text="${portfolio.job}"></h3>
+            <p class="fst-italic">
+              Curious learning capability is making me to became a Full Stack Developer who can make the best possible outcome for the given requirements on timely manner.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span><time datetime="1996-05-10">10 May 1996</time></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>26</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a target="_blank" href="https://annamalai.er.in">annamalai.er.in</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Mobile:</strong> <span><a target="_blank" th:href="'tel:'+${portfolio.mobile}" th:text="${portfolio.mobile}"></a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span><a target="_blank" href="https://goo.gl/maps/eTrwghgg8LYUyDtA6">Stockholm, Sweden.</a></span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Engineering</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Personal Mail:</strong> <span><a target="_blank" href="mailto:me@annamalai.er.in">me@annamalai.er.in</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Outlook Mail:</strong> <span><a target="_blank" href="mailto:annamalai@outlook.in">annamalai@outlook.in</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Gmail:</strong> <span><a target="_blank" href="mailto:annamalai10051996@gmail.com">annamalai10051996@gmail.com</a></span>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>NA</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>My curiosity in learning is always guiding me to acquire new skills and technologies.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">Java <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Java" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">MySQL <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="MySQL" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">MongoDB <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="MongoDB" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">jQuery <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="JQuery" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Go <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Go" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Hibernate <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Hibernate" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">React <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="React" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Swift <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Swift" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Swagger <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Swagger" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JSON <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="JSON" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">ActiveMQ <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="ActiveMQ" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JBPM <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="JBPM" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">XML <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="XML" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Hystrix <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Hystrix" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">Redis <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Redis" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">RabbitMQ <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Rabbitmq" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Zookeeper <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Zookeeper" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Spring boot <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Spring Boot" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Memcache <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Memcache" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">HTML5 <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="HTML5" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">C and C++ <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="C and C++" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Apache Camel <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Apache Camel" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS3 <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="CSS3" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Groovy <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Groovy" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JUnit <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="JUnit" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Maven <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Maven" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Javascript <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Javascript" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Python <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-label="Python" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4 th:text="${portfolio.name}"></h4>
+              <h5>2017 - Present</h5>
+              <p><em><strong>Passionate</strong> and efficient <strong>Full Stack</strong> Developer with 5+ years of hands-on experience in <strong>scalable application</strong> development and maintenance using different technologies and programming languages.</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Engineering in Computer Science and Engineering</h4>
+              <h5>2013 - 2017</h5>
+              <p><em>Anna University, Chennai, Tamil Nadu, India</em></p>
+              <p>Enhanced my self learning ability with my peer learners by helping them to understand new things quickly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Java Developer</h4>
+              <h5>07 June 2022 - Present</h5>
+              <p><em>ComeOn Group, Stockholm, Sweden. </em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Dev Lead (Onsite)</h4>
+              <h5>01 April 2022 - 03 June 2022</h5>
+              <p><em>Infosys Limited Sweden. </em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Senior Software Developer (Onsite)</h4>
+              <h5>12 January 2022 - 31 March 2022</h5>
+              <p><em>Infosys Limited Sweden. </em></p>
+              <ul>
+                <li>Established High Collaborativeness with offshore team and Client.</li>
+                <li>Adding Customizability to configurable ecommerce microservice platforms based on Client needs.</li>
+                <li>Debugging and Fixing Customization and compatibility failures in a timely manner.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Senior Software Developer</h4>
+              <h5>15 August 2020 - 11 January 2022</h5>
+              <p><em>Infosys Limited Bangalore, Karnataka, India.</em></p>
+              <ul>
+                <li>Built effective microservices which will have a 90 percentile response time of 200ms.</li>
+                <li>Wrote a lot of unit tests to ensure that the projects passed all quality benchmarks with greater than 85% of code coverage.</li>
+                <li>Taught 3 of the junior developers to understand the system capability to increase their productivity by 2 times.</li>
+                <li>Worked with a team of expert coders to write 100% maintainable code and maintain existing software to improve performance.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Senior Software Developer</h4>
+              <h5>01 June 2017 - 15 August 2020</h5>
+              <p><em>SKAVA, An Infosys Company Coimbatore, Tamil Nadu, India.</em></p>
+              <ul>
+                <li>Developed 100% customizable applications with JAVA, Spring, Spring Boot, SQL Server, No SQL as well as worked in troubleshooting methods and documented solutions.</li>
+                <li>Consulted with the product manager to identify the minimal viable product and decomposed feature set into fine grained small scoped user stories to reduce the development and testing effort by 50%.</li>
+                <li>Planned the delivery for new requirements and estimated feasibility performance analysis by forecasting risks to deliver new requirements with 100% Quality on time.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Development Intern</h4>
+              <h5>01 December 2016 - 31 May 2017</h5>
+              <p><em>SKAVA, An Infosys Company Coimbatore, Tamil Nadu, India.</em></p>
+              <ul>
+                <li>Obtained, studied, and manipulated data to analyze systems’ full capabilities with 2 times faster than co Interns.</li>
+                <li>Integrated third parties by collecting and learning important information 2 times faster than co interns.</li>
+                <li>Wrote 100% bug free, maintainable and extensible code in a team environment.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="/assets/img/portfolio-admin.webp" class="img-fluid portfolio-img" alt="My Portfolio Management" height="600" width="600">
+              <div class="portfolio-info">
+                <div class="h4">My Portfolio Management</div>
+                <div class="portfolio-links">
+                  <a target="_blank" href="/admin" title="My Portfolio Management"><i class='bx bx-navigation'></i></a>
+                  <a href="/admin" class="portfolio-details-lightbox" data-glightbox="type: external" title="My Portfolio Management"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="/assets/img/android.webp" class="img-fluid portfolio-img" alt="Android" height="600" width="600">
+              <div class="portfolio-info">
+                <div class="h4">Android Reference</div>
+                <div class="portfolio-links">
+                  <a target="_blank" href="https://github.com/annamalai-palanikumar/AndroidAppReference" title="Android Reference"><i class="bx bx-navigation"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="/assets/img/tools.webp" class="img-fluid portfolio-img" alt="Show All Tools and Applications" height="600" width="600">
+              <div class="portfolio-info">
+                <div class="h4">Show All</div>
+                <div class="portfolio-links">
+                  <a target="_blank" href="/tools" title="All Tools and Applications"><i class="bx bx-navigation"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row mt-1">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bx bx-map"></i>
+                <div class="h4">Location:</div>
+                <p><a target="_blank" href="https://goo.gl/maps/eTrwghgg8LYUyDtA6">Stockholm, Sweden.</a></p>
+              </div>
+
+              <div class="email">
+                <i class="bx bx-envelope"></i>
+                <div class="h4">Email:</div>
+                <p><a target="_blank" href="mailto:me@annamalai.er.in">me@annamalai.er.in</a></p>
+              </div>
+
+              <div class="phone">
+                <i class="bx bx-phone"></i>
+                <div class="h4">Call:</div>
+                <p><a target="_blank" href="tel:+46790123327">+46 790123327</a></p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="/contact" method="post" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <h3 th:text="${portfolio.name}"></h3>
+      <p>A Curious Learner!</p>
+      <div class="social-links">
+        <a target="_blank" href="https://twitter.com/mistermalai" class="twitter" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a target="_blank" href="https://www.facebook.com/annamalai.palanikumar.be" class="facebook" title="Facebook"><i class="bx bxl-facebook"></i></a>
+        <a target="_blank" href="https://www.instagram.com/mistermalai" class="instagram" title="Instagram" ><i class="bx bxl-instagram"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/annamalai-p" class="linkedin" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class='bx bx-chevron-up'></i></a>
+
+  <script defer th:src="@{/assets/vendor/purecounter/purecounter.js}"></script>
+  <script defer th:src="@{https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js}"></script>
+  <script defer th:src="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+  <script defer th:src="@{/assets/vendor/glightbox/js/glightbox.min.js}"></script>
+  <script defer th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js}"></script>
+  <script defer th:src="@{https://cdn.jsdelivr.net/npm/swiper@7.3.0/swiper-bundle.min.js}"></script>
+  <script defer th:src="@{/assets/vendor/waypoints/noframework.waypoints.js}"></script>
+  <script defer th:src="@{https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.min.js}"></script>
+  <script defer th:src="@{https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.min.js}"></script>
+
+  <script defer th:src="@{/assets/js/portfolio-main.js}"></script>
+
+</body>
+
+</html>
