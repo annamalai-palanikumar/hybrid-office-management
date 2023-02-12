@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>URL Decoder/Encoder</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.ico" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/admin-style.css" rel="stylesheet">
+  <script>
+  function encode() {
+    try {
+    var contentElement = document.getElementById('content');
+    var unencoded = contentElement.value;
+      contentElement.value = encodeURIComponent(unencoded).replace(/'/g,"%27").replace(/"/g,"%22");	
+    } catch(error) {
+      errorAlert(error)
+    }
+  }
+  function decode() {
+    try {
+      var contentElement = document.getElementById('content');
+      var encoded = contentElement.value;
+      contentElement.value = decodeURIComponent(encoded.replace(/\+/g,  " "));
+    } catch(error) {
+      errorAlert(error)
+    }
+  }
+  function errorAlert(error) {
+    var errorMessage = "Error occured before completing requested operation!";
+    if(error.message) {
+      errorMessage = error.message;
+    }
+    var errorMarkup = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="bx bx-error-alt me-1"></i>
+      ${errorMessage}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+    document.getElementById('error-section').innerHTML = errorMarkup;
+  }
+  </script>
+</head>
+
+<body>
+  <div id="error-section"></div>
+  <main id="main" class="main" style="margin: 0%;">
+    <section class="section">
+      <div class="row">
+        <div class="col-lg">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">URL Decoder/Encoder</h5>
+
+              <!-- URL Decoder/Encoder -->
+              <form class="row g-3" onsubmit="return false;">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Text to Encode or Decode" id="content" style="height: 250px;"></textarea>
+                    <label for="content">Text to Encode or Decode</label>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <button class="btn btn-primary" onclick="decode()">Decode</button>
+                  <button class="btn btn-primary" onclick="encode()">Encode</button>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Input a text to encode or decode it.</li>
+                  <li class="list-group-item">Turning JavaScript URLs with ASCII Encoding characters into readable URLs.</li>
+                  <li class="list-group-item">You can also use this URL Decoder/Encoder for offline use, just save to your hard drive.</li>
+                </ul>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">ASCII Character to UTF-8 Encoding Reference</h5>
+          <table class="ws-table-all notranslate table-hover table-sm table">
+            <tbody><tr>
+              <th style="width:33%">Character</th>
+              <th style="width:34%">From UTF-8</th>
+              </tr>
+            <tr>
+              <td>space</td>
+              <td>%20</td>
+            </tr>
+            <tr>
+              <td>!</td>
+              <td>%21</td>
+            </tr>
+            <tr>
+              <td>"</td>
+              <td>%22</td>
+            </tr>
+            <tr>
+              <td>#</td>
+              <td>%23</td>
+            </tr>
+            <tr>
+              <td>$</td>
+              <td>%24</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>%25</td>
+            </tr>
+            <tr>
+              <td>&amp;</td>
+              <td>%26</td>
+            </tr>
+            <tr>
+              <td>'</td>
+              <td>%27</td>
+            </tr>
+            <tr>
+              <td>(</td>
+              <td>%28</td>
+            </tr>
+            <tr>
+              <td>)</td>
+              <td>%29</td>
+            </tr>
+            <tr>
+              <td>*</td>
+              <td>%2A</td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>%2B</td>
+            </tr>
+            <tr>
+              <td>,</td>
+              <td>%2C</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>%2D</td>
+            </tr>
+            <tr>
+              <td>.</td>
+              <td>%2E</td>
+            </tr>
+            <tr>
+              <td>/</td>
+              <td>%2F</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>%30</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>%31</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>%32</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>%33</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>%34</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>%35</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>%36</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>%37</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>%38</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>%39</td>
+            </tr>
+            <tr>
+              <td>:</td>
+              <td>%3A</td>
+            </tr>
+            <tr>
+              <td>;</td>
+              <td>%3B</td>
+            </tr>
+            <tr>
+              <td>&lt;</td>
+              <td>%3C</td>
+            </tr>
+            <tr>
+              <td>=</td>
+              <td>%3D</td>
+            </tr>
+            <tr>
+              <td>&gt;</td>
+              <td>%3E</td>
+            </tr>
+            <tr>
+              <td>?</td>
+              <td>%3F</td>
+            </tr>
+            <tr>
+              <td>@</td>
+              <td>%40</td>
+            </tr>
+            <tr>
+              <td>A</td>
+              <td>%41</td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td>%42</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>%43</td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td>%44</td>
+            </tr>
+            <tr>
+              <td>E</td>
+              <td>%45</td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td>%46</td>
+            </tr>
+            <tr>
+              <td>G</td>
+              <td>%47</td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td>%48</td>
+            </tr>
+            <tr>
+              <td>I</td>
+              <td>%49</td>
+            </tr>
+            <tr>
+              <td>J</td>
+              <td>%4A</td>
+            </tr>
+            <tr>
+              <td>K</td>
+              <td>%4B</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>%4C</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>%4D</td>
+            </tr>
+            <tr>
+              <td>N</td>
+              <td>%4E</td>
+            </tr>
+            <tr>
+              <td>O</td>
+              <td>%4F</td>
+            </tr>
+            <tr>
+              <td>P</td>
+              <td>%50</td>
+            </tr>
+            <tr>
+              <td>Q</td>
+              <td>%51</td>
+            </tr>
+            <tr>
+              <td>R</td>
+              <td>%52</td>
+            </tr>
+            <tr>
+              <td>S</td>
+              <td>%53</td>
+            </tr>
+            <tr>
+              <td>T</td>
+              <td>%54</td>
+            </tr>
+            <tr>
+              <td>U</td>
+              <td>%55</td>
+            </tr>
+            <tr>
+              <td>V</td>
+              <td>%56</td>
+            </tr>
+            <tr>
+              <td>W</td>
+              <td>%57</td>
+            </tr>
+            <tr>
+              <td>X</td>
+              <td>%58</td>
+            </tr>
+            <tr>
+              <td>Y</td>
+              <td>%59</td>
+            </tr>
+            <tr>
+              <td>Z</td>
+              <td>%5A</td>
+            </tr>
+            <tr>
+              <td>[</td>
+              <td>%5B</td>
+            </tr>
+            <tr>
+              <td>\</td>
+              <td>%5C</td>
+            </tr>
+            <tr>
+              <td>]</td>
+              <td>%5D</td>
+            </tr>
+            <tr>
+              <td>^</td>
+              <td>%5E</td>
+            </tr>
+            <tr>
+              <td>_</td>
+              <td>%5F</td>
+            </tr>
+            <tr>
+              <td>`</td>
+              <td>%60</td>
+            </tr>
+            <tr>
+              <td>a</td>
+              <td>%61</td>
+            </tr>
+            <tr>
+              <td>b</td>
+              <td>%62</td>
+            </tr>
+            <tr>
+              <td>c</td>
+              <td>%63</td>
+            </tr>
+            <tr>
+              <td>d</td>
+              <td>%64</td>
+            </tr>
+            <tr>
+              <td>e</td>
+              <td>%65</td>
+            </tr>
+            <tr>
+              <td>f</td>
+              <td>%66</td>
+            </tr>
+            <tr>
+              <td>g</td>
+              <td>%67</td>
+            </tr>
+            <tr>
+              <td>h</td>
+              <td>%68</td>
+            </tr>
+            <tr>
+              <td>i</td>
+              <td>%69</td>
+            </tr>
+            <tr>
+              <td>j</td>
+              <td>%6A</td>
+            </tr>
+            <tr>
+              <td>k</td>
+              <td>%6B</td>
+            </tr>
+            <tr>
+              <td>l</td>
+              <td>%6C</td>
+            </tr>
+            <tr>
+              <td>m</td>
+              <td>%6D</td>
+            </tr>
+            <tr>
+              <td>n</td>
+              <td>%6E</td>
+            </tr>
+            <tr>
+              <td>o</td>
+              <td>%6F</td>
+            </tr>
+            <tr>
+              <td>p</td>
+              <td>%70</td>
+            </tr>
+            <tr>
+              <td>q</td>
+              <td>%71</td>
+            </tr>
+            <tr>
+              <td>r</td>
+              <td>%72</td>
+            </tr>
+            <tr>
+              <td>s</td>
+              <td>%73</td>
+            </tr>
+            <tr>
+              <td>t</td>
+              <td>%74</td>
+            </tr>
+            <tr>
+              <td>u</td>
+              <td>%75</td>
+            </tr>
+            <tr>
+              <td>v</td>
+              <td>%76</td>
+            </tr>
+            <tr>
+              <td>w</td>
+              <td>%77</td>
+            </tr>
+            <tr>
+              <td>x</td>
+              <td>%78</td>
+            </tr>
+            <tr>
+              <td>y</td>
+              <td>%79</td>
+            </tr>
+            <tr>
+              <td>z</td>
+              <td>%7A</td>
+            </tr>
+            <tr>
+              <td>{</td>
+              <td>%7B</td>
+            </tr>
+            <tr>
+              <td>|</td>
+              <td>%7C</td>
+            </tr>
+            <tr>
+              <td>}</td>
+              <td>%7D</td>
+            </tr>
+            <tr>
+              <td>~</td>
+              <td>%7E</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>%7F</td>
+            </tr>
+            <tr>
+              <td>
+              <span>€</span></td>
+              <td>%E2%82%AC</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>%81</td>
+            </tr>
+            <tr>
+              <td>‚</td>
+              <td>%E2%80%9A</td>
+            </tr>
+            <tr>
+              <td>ƒ</td>
+              <td>%C6%92</td>
+            </tr>
+            <tr>
+              <td>„</td>
+              <td>%E2%80%9E</td>
+            </tr>
+            <tr>
+              <td>…</td>
+              <td>%E2%80%A6</td>
+            </tr>
+            <tr>
+              <td>†</td>
+              <td>%E2%80%A0</td>
+            </tr>
+            <tr>
+              <td>‡</td>
+              <td>%E2%80%A1</td>
+            </tr>
+            <tr>
+              <td>ˆ</td>
+              <td>%CB%86</td>
+            </tr>
+            <tr>
+              <td>‰</td>
+              <td>%E2%80%B0</td>
+            </tr>
+            <tr>
+              <td>Š</td>
+              <td>%C5%A0</td>
+            </tr>
+            <tr>
+              <td>‹</td>
+              <td>%E2%80%B9</td>
+            </tr>
+            <tr>
+              <td>Œ</td>
+              <td>%C5%92</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>%C5%8D</td>
+            </tr>
+            <tr>
+              <td>Ž</td>
+              <td>%C5%BD</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>%8F</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>%C2%90</td>
+            </tr>
+            <tr>
+              <td>‘</td>
+              <td>%E2%80%98</td>
+            </tr>
+            <tr>
+              <td>’</td>
+              <td>%E2%80%99</td>
+            </tr>
+            <tr>
+              <td>“</td>
+              <td>%E2%80%9C</td>
+            </tr>
+            <tr>
+              <td>”</td>
+              <td>%E2%80%9D</td>
+            </tr>
+            <tr>
+              <td>•</td>
+              <td>%E2%80%A2</td>
+            </tr>
+            <tr>
+              <td>–</td>
+              <td>%E2%80%93</td>
+            </tr>
+            <tr>
+              <td>—</td>
+              <td>%E2%80%94</td>
+            </tr>
+            <tr>
+              <td>˜</td>
+              <td>%CB%9C</td>
+            </tr>
+            <tr>
+              <td>™</td>
+              <td>%E2%84</td>
+            </tr>
+            <tr>
+              <td>š</td>
+              <td>%C5%A1</td>
+            </tr>
+            <tr>
+              <td>›</td>
+              <td>%E2%80</td>
+            </tr>
+            <tr>
+              <td>œ</td>
+              <td>%C5%93</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>%9D</td>
+            </tr>
+            <tr>
+              <td>ž</td>
+              <td>%C5%BE</td>
+            </tr>
+            <tr>
+              <td>Ÿ</td>
+              <td>%C5%B8</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>%C2%A0</td>
+            </tr>
+            <tr>
+              <td>¡</td>
+              <td>%C2%A1</td>
+            </tr>
+            <tr>
+              <td>¢</td>
+              <td>%C2%A2</td>
+            </tr>
+            <tr>
+              <td>£</td>
+              <td>%C2%A3</td>
+            </tr>
+            <tr>
+              <td>¤</td>
+              <td>%C2%A4</td>
+            </tr>
+            <tr>
+              <td>¥</td>
+              <td>%C2%A5</td>
+            </tr>
+            <tr>
+              <td>¦</td>
+              <td>%C2%A6</td>
+            </tr>
+            <tr>
+              <td>§</td>
+              <td>%C2%A7</td>
+            </tr>
+            <tr>
+              <td>¨</td>
+              <td>%C2%A8</td>
+            </tr>
+            <tr>
+              <td>©</td>
+              <td>%C2%A9</td>
+            </tr>
+            <tr>
+              <td>ª</td>
+              <td>%C2%AA</td>
+            </tr>
+            <tr>
+              <td>«</td>
+              <td>%C2%AB</td>
+            </tr>
+            <tr>
+              <td>¬</td>
+              <td>%C2%AC</td>
+            </tr>
+            <tr>
+              <td>­</td>
+              <td>%C2%AD</td>
+            </tr>
+            <tr>
+              <td>®</td>
+              <td>%C2%AE</td>
+            </tr>
+            <tr>
+              <td>¯</td>
+              <td>%C2%AF</td>
+            </tr>
+            <tr>
+              <td>°</td>
+              <td>%C2%B0</td>
+            </tr>
+            <tr>
+              <td>±</td>
+              <td>%C2%B1</td>
+            </tr>
+            <tr>
+              <td>²</td>
+              <td>%C2%B2</td>
+            </tr>
+            <tr>
+              <td>³</td>
+              <td>%C2%B3</td>
+            </tr>
+            <tr>
+              <td>´</td>
+              <td>%C2%B4</td>
+            </tr>
+            <tr>
+              <td>µ</td>
+              <td>%C2%B5</td>
+            </tr>
+            <tr>
+              <td>¶</td>
+              <td>%C2%B6</td>
+            </tr>
+            <tr>
+              <td>·</td>
+              <td>%C2%B7</td>
+            </tr>
+            <tr>
+              <td>¸</td>
+              <td>%C2%B8</td>
+            </tr>
+            <tr>
+              <td>¹</td>
+              <td>%C2%B9</td>
+            </tr>
+            <tr>
+              <td>º</td>
+              <td>%C2%BA</td>
+            </tr>
+            <tr>
+              <td>»</td>
+              <td>%C2%BB</td>
+            </tr>
+            <tr>
+              <td>¼</td>
+              <td>%C2%BC</td>
+            </tr>
+            <tr>
+              <td>½</td>
+              <td>%C2%BD</td>
+            </tr>
+            <tr>
+              <td>¾</td>
+              <td>%C2%BE</td>
+            </tr>
+            <tr>
+              <td>¿</td>
+              <td>%C2%BF</td>
+            </tr>
+            <tr>
+              <td>À</td>
+              <td>%C3%80</td>
+            </tr>
+            <tr>
+              <td>Á</td>
+              <td>%C3%81</td>
+            </tr>
+            <tr>
+              <td>Â</td>
+              <td>%C3%82</td>
+            </tr>
+            <tr>
+              <td>Ã</td>
+              <td>%C3%83</td>
+            </tr>
+            <tr>
+              <td>Ä</td>
+              <td>%C3%84</td>
+            </tr>
+            <tr>
+              <td>Å</td>
+              <td>%C3%85</td>
+            </tr>
+            <tr>
+              <td>Æ</td>
+              <td>%C3%86</td>
+            </tr>
+            <tr>
+              <td>Ç</td>
+              <td>%C3%87</td>
+            </tr>
+            <tr>
+              <td>È</td>
+              <td>%C3%88</td>
+            </tr>
+            <tr>
+              <td>É</td>
+              <td>%C3%89</td>
+            </tr>
+            <tr>
+              <td>Ê</td>
+              <td>%C3%8A</td>
+            </tr>
+            <tr>
+              <td>Ë</td>
+              <td>%C3%8B</td>
+            </tr>
+            <tr>
+              <td>Ì</td>
+              <td>%C3%8C</td>
+            </tr>
+            <tr>
+              <td>Í</td>
+              <td>%C3%8D</td>
+            </tr>
+            <tr>
+              <td>Î</td>
+              <td>%C3%8E</td>
+            </tr>
+            <tr>
+              <td>Ï</td>
+              <td>%C3%8F</td>
+            </tr>
+            <tr>
+              <td>Ð</td>
+              <td>%C3%90</td>
+            </tr>
+            <tr>
+              <td>Ñ</td>
+              <td>%C3%91</td>
+            </tr>
+            <tr>
+              <td>Ò</td>
+              <td>%C3%92</td>
+            </tr>
+            <tr>
+              <td>Ó</td>
+              <td>%C3%93</td>
+            </tr>
+            <tr>
+              <td>Ô</td>
+              <td>%C3%94</td>
+            </tr>
+            <tr>
+              <td>Õ</td>
+              <td>%C3%95</td>
+            </tr>
+            <tr>
+              <td>Ö</td>
+              <td>%C3%96</td>
+            </tr>
+            <tr>
+              <td>×</td>
+              <td>%C3%97</td>
+            </tr>
+            <tr>
+              <td>Ø</td>
+              <td>%C3%98</td>
+            </tr>
+            <tr>
+              <td>Ù</td>
+              <td>%C3%99</td>
+            </tr>
+            <tr>
+              <td>Ú</td>
+              <td>%C3%9A</td>
+            </tr>
+            <tr>
+              <td>Û</td>
+              <td>%C3%9B</td>
+            </tr>
+            <tr>
+              <td>Ü</td>
+              <td>%C3%9C</td>
+            </tr>
+            <tr>
+              <td>Ý</td>
+              <td>%C3%9D</td>
+            </tr>
+            <tr>
+              <td>Þ</td>
+              <td>%C3%9E</td>
+            </tr>
+            <tr>
+              <td>ß</td>
+              <td>%C3%9F</td>
+            </tr>
+            <tr>
+              <td>à</td>
+              <td>%C3%A0</td>
+            </tr>
+            <tr>
+              <td>á</td>
+              <td>%C3%A1</td>
+            </tr>
+            <tr>
+              <td>â</td>
+              <td>%C3%A2</td>
+            </tr>
+            <tr>
+              <td>ã</td>
+              <td>%C3%A3</td>
+            </tr>
+            <tr>
+              <td>ä</td>
+              <td>%C3%A4</td>
+            </tr>
+            <tr>
+              <td>å</td>
+              <td>%C3%A5</td>
+            </tr>
+            <tr>
+              <td>æ</td>
+              <td>%C3%A6</td>
+            </tr>
+            <tr>
+              <td>ç</td>
+              <td>%C3%A7</td>
+            </tr>
+            <tr>
+              <td>è</td>
+              <td>%C3%A8</td>
+            </tr>
+            <tr>
+              <td>é</td>
+              <td>%C3%A9</td>
+            </tr>
+            <tr>
+              <td>ê</td>
+              <td>%C3%AA</td>
+            </tr>
+            <tr>
+              <td>ë</td>
+              <td>%C3%AB</td>
+            </tr>
+            <tr>
+              <td>ì</td>
+              <td>%C3%AC</td>
+            </tr>
+            <tr>
+              <td>í</td>
+              <td>%C3%AD</td>
+            </tr>
+            <tr>
+              <td>î</td>
+              <td>%C3%AE</td>
+            </tr>
+            <tr>
+              <td>ï</td>
+              <td>%C3%AF</td>
+            </tr>
+            <tr>
+              <td>ð</td>
+              <td>%C3%B0</td>
+            </tr>
+            <tr>
+              <td>ñ</td>
+              <td>%C3%B1</td>
+            </tr>
+            <tr>
+              <td>ò</td>
+              <td>%C3%B2</td>
+            </tr>
+            <tr>
+              <td>ó</td>
+              <td>%C3%B3</td>
+            </tr>
+            <tr>
+              <td>ô</td>
+              <td>%C3%B4</td>
+            </tr>
+            <tr>
+              <td>õ</td>
+              <td>%C3%B5</td>
+            </tr>
+            <tr>
+              <td>ö</td>
+              <td>%C3%B6</td>
+            </tr>
+            <tr>
+              <td>÷</td>
+              <td>%C3%B7</td>
+            </tr>
+            <tr>
+              <td>ø</td>
+              <td>%C3%B8</td>
+            </tr>
+            <tr>
+              <td>ù</td>
+              <td>%C3%B9</td>
+            </tr>
+            <tr>
+              <td>ú</td>
+              <td>%C3%BA</td>
+            </tr>
+            <tr>
+              <td>û</td>
+              <td>%C3%BB</td>
+            </tr>
+            <tr>
+              <td>ü</td>
+              <td>%C3%BC</td>
+            </tr>
+            <tr>
+              <td>ý</td>
+              <td>%C3%BD</td>
+            </tr>
+            <tr>
+              <td>þ</td>
+              <td>%C3%BE</td>
+            </tr>
+            <tr>
+              <td>ÿ</td>
+              <td>%C3%BF</td>
+            </tr>
+            </tbody></table>
+          </div>
+          </div>
+        </div>
+        <div class="col-lg-6">  
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">ASCII Control Character to URL Encoding Reference</h5>
+              <table class="ws-table-all notranslate table-hover table-sm table">
+                <tbody><tr>
+                  <th>ASCII Character</th>
+                  <th>Description</th>
+                  <th>URL-encoding</th>
+                  </tr>
+                <tr>
+                  <td>NUL</td>
+                  <td>null character</td>
+                  <td>%00</td>
+                </tr>
+                <tr>
+                  <td>SOH</td>
+                  <td>start of header</td>
+                  <td>%01</td>
+                </tr>
+                <tr>
+                  <td>STX</td>
+                  <td>start of text</td>
+                  <td>%02</td>
+                </tr>
+                <tr>
+                  <td>ETX</td>
+                  <td>end of text</td>
+                  <td>%03</td>
+                </tr>
+                <tr>
+                  <td>EOT</td>
+                  <td>end of transmission</td>
+                  <td>%04</td>
+                </tr>
+                <tr>
+                  <td>ENQ</td>
+                  <td>enquiry</td>
+                  <td>%05</td>
+                </tr>
+                <tr>
+                  <td>ACK</td>
+                  <td>acknowledge</td>
+                  <td>%06</td>
+                </tr>
+                <tr>
+                  <td>BEL</td>
+                  <td>bell (ring)</td>
+                  <td>%07</td>
+                </tr>
+                <tr>
+                  <td>BS</td>
+                  <td>backspace</td>
+                  <td>%08</td>
+                </tr>
+                <tr>
+                  <td>HT</td>
+                  <td>horizontal tab</td>
+                  <td>%09</td>
+                </tr>
+                <tr>
+                  <td>LF</td>
+                  <td>line feed</td>
+                  <td>%0A</td>
+                </tr>
+                <tr>
+                  <td>VT</td>
+                  <td>vertical tab</td>
+                  <td>%0B</td>
+                </tr>
+                <tr>
+                  <td>FF</td>
+                  <td>form feed</td>
+                  <td>%0C</td>
+                </tr>
+                <tr>
+                  <td>CR</td>
+                  <td>carriage return</td>
+                  <td>%0D</td>
+                </tr>
+                <tr>
+                  <td>SO</td>
+                  <td>shift out</td>
+                  <td>%0E</td>
+                </tr>
+                <tr>
+                  <td>SI</td>
+                  <td>shift in</td>
+                  <td>%0F</td>
+                </tr>
+                <tr>
+                  <td>DLE</td>
+                  <td>data link escape</td>
+                  <td>%10</td>
+                </tr>
+                <tr>
+                  <td>DC1</td>
+                  <td>device control 1</td>
+                  <td>%11</td>
+                </tr>
+                <tr>
+                  <td>DC2</td>
+                  <td>device control 2</td>
+                  <td>%12</td>
+                </tr>
+                <tr>
+                  <td>DC3</td>
+                  <td>device control 3</td>
+                  <td>%13</td>
+                </tr>
+                <tr>
+                  <td>DC4</td>
+                  <td>device control 4</td>
+                  <td>%14</td>
+                </tr>
+                <tr>
+                  <td>NAK</td>
+                  <td>negative acknowledge</td>
+                  <td>%15</td>
+                </tr>
+                <tr>
+                  <td>SYN</td>
+                  <td>synchronize</td>
+                  <td>%16</td>
+                </tr>
+                <tr>
+                  <td>ETB</td>
+                  <td>end transmission block</td>
+                  <td>%17</td>
+                </tr>
+                <tr>
+                  <td>CAN</td>
+                  <td>cancel</td>
+                  <td>%18</td>
+                </tr>
+                <tr>
+                  <td>EM</td>
+                  <td>end of medium</td>
+                  <td>%19</td>
+                </tr>
+                <tr>
+                  <td>SUB</td>
+                  <td>substitute</td>
+                  <td>%1A</td>
+                </tr>
+                <tr>
+                  <td>ESC</td>
+                  <td>escape</td>
+                  <td>%1B</td>
+                </tr>
+                <tr>
+                  <td>FS</td>
+                  <td>file separator</td>
+                  <td>%1C</td>
+                </tr>
+                <tr>
+                  <td>GS</td>
+                  <td>group separator</td>
+                  <td>%1D</td>
+                </tr>
+                <tr>
+                  <td>RS</td>
+                  <td>record separator</td>
+                  <td>%1E</td>
+                </tr>
+                <tr>
+                  <td>US</td>
+                  <td>unit separator</td>
+                  <td>%1F</td>
+                </tr>
+            </tbody></table>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer" style="margin: 0%;">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

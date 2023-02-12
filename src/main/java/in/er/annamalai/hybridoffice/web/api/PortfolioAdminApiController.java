@@ -20,7 +20,7 @@ public class PortfolioAdminApiController {
     private static final Long DEFAULT_PORTFOLIO_ID = 1L;
 
     @Autowired
-    private PortfolioService portfolioService;
+    private AreaBookingService portfolioService;
 
     @PatchMapping(value = {"", "/{id}"})
     public ResponseEntity<PortfolioDTO> updatePortfolio(@PathVariable(name = "id", required = false) Optional<Long> portfolioId, @RequestBody PortfolioDTO updatedPortfolio) {

@@ -11,21 +11,25 @@ import javax.persistence.Table;
 @Table(name = "employee")
 public class Employee {
     @Id
-    @Column("id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column("name")
+    @Column(name = "name")
     private String name;
 
-    @Column("email")
+    @Column(name = "email")
     private String email;
 
-    @Column("admin")
+    @Column(name = "admin")
     private boolean admin;
 
     protected Employee() {
         super();
+    }
+
+    public Employee(Long id) {
+        this.id = id;
     }
 
     public Employee(String name, String email, boolean admin) {
@@ -37,7 +41,7 @@ public class Employee {
     @Override
     public String toString() {
         return String.format(
-                "Employee[id=%d, name='%s', email='%s, admin=%b']",
+                "Employee[id=%d, name='%s', email='%s', admin=%b]",
                 this.id, this.name, this.email, this.admin);
     }
 

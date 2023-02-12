@@ -26,10 +26,10 @@ public class PortfolioAdminViewController {
     private static final Long DEFAULT_PORTFOLIO_ID = 1L;
 
     @Autowired
-    private PortfolioAdminSessionService portfolioAdminSessionService;
+    private EmployeeService portfolioAdminSessionService;
 
     @Autowired
-    private PortfolioService portfolioService;
+    private AreaBookingService portfolioService;
 
     @GetMapping(value = {"", "/{id}"})
     public String home(@CookieValue(name = "sessionId", required = false) String sessionId, 

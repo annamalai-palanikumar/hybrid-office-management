@@ -11,14 +11,14 @@ import javax.persistence.Table;
 @Table(name = "identity_client")
 public class IdentityClient {
     @Id
-    @Column("id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column("name")
+    @Column(name = "name")
     private String name;
 
-    @Column("client_id")
+    @Column(name = "client_id")
     private String clientId;
 
     protected IdentityClient() {

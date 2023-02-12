@@ -19,7 +19,7 @@ public class PortfolioPublicApiController {
     private static final Long DEFAULT_PORTFOLIO_ID = 1L;
 
     @Autowired
-    private PortfolioService portfolioService;
+    private AreaBookingService portfolioService;
 
     @GetMapping(value = {"", "/{id}"})
     public ResponseEntity<PortfolioDTO> getPortfolio(@PathVariable(name = "id", required = false) Optional<Long> portfolioId) {

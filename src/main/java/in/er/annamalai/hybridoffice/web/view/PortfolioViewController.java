@@ -17,7 +17,7 @@ public class PortfolioViewController {
     private static final Long DEFAULT_PORTFOLIO_ID = 1L;
 
     @Autowired
-    private PortfolioService portfolioService;
+    private AreaBookingService portfolioService;
 
     @GetMapping
     public String portfolio(@RequestParam(name = "id", required = false) Optional<Long> portfolioId,

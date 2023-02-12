@@ -26,7 +26,7 @@ import in.er.annamalai.portfolio.service.PortfolioAdminSessionService;
 public class PortfolioAdminSessionApiController {
 
     @Autowired
-    private PortfolioAdminSessionService portfolioAdminSessionService;
+    private EmployeeService portfolioAdminSessionService;
 
     @GetMapping
     public ResponseEntity<AdminSessionDTO> getSession(@CookieValue(name = "sessionId", required = false) String sessionId) {
